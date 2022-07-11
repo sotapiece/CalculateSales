@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class CalculateSales {
 	public static void main(String[] args) {
 		String[] shops = new String[2];
-		HashMap<String, String> shopsdeta = new HashMap<String, String>(5);
+		HashMap<String, Integer> shopsdeta = new HashMap<String, Integer>(5);
 		try {
 			File file = new File("/Users/yamazaki/training/CalculateSales/branch.lst");
 			FileReader fr = new FileReader(file);
@@ -20,12 +20,34 @@ public class CalculateSales {
 				shops = s.split(",");
 				System.out.println(shops[0]);
 				System.out.println(shops[1]);
-				shopsdeta.put(shops[0],shops[1]);
+				shopsdeta.put(shops[0],0);
 			}
 		}catch(IOException e) {
 			System.out.println(e);
 		}
 		
 		System.out.println(shopsdeta.get("001"));
+		System.out.println(shopsdeta.get("002"));
+		System.out.println(shopsdeta.get("003"));
+		System.out.println(shopsdeta.get("004"));
+		System.out.println(shopsdeta.get("005"));
+		
+		
+		File salesFile = new File("/Users/yamazaki/training/CalculateSales/earnings");
+	    File[] salesFileList = salesFile.listFiles();
+	    
+	    for(int i = 0; i<salesFileList.length; i++) {
+	    	System.out.println(salesFileList[i]);
+	    }
+	    
+	    
+	    
+//	   if(salesFileList != null) {
+//		   for(int i = 0; i<salesFileList.length; i++) {
+//			   if(salesFileList[i].getName().substring(salesFileList[i].length() - 12).matches("^[0-9]{12}") && salesFileList[i].getName().substring(salesFileList[i].length() - 12).matches(".+rcd$")) {
+//				  
+//			   }
+//		   }
+//	   }
 	}
 }
