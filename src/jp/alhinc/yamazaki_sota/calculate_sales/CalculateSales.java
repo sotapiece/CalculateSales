@@ -11,7 +11,7 @@ public class CalculateSales {
 		String[] shops = new String[2];
 		HashMap<String, Integer> shopsdeta = new HashMap<String, Integer>(5);
 		try {
-			File file = new File("/Users/yamazaki/training/CalculateSales/branch.lst");
+			File file = new File(args[0], "branch.lst");
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
 			String s ;
@@ -33,21 +33,27 @@ public class CalculateSales {
 		System.out.println(shopsdeta.get("005"));
 		
 		
-		File salesFile = new File("/Users/yamazaki/training/CalculateSales/earnings");
-	    File[] salesFileList = salesFile.listFiles();
-	    
-	    for(int i = 0; i<salesFileList.length; i++) {
-	    	System.out.println(salesFileList[i]);
+		File salesFile = new File(args[0]);
+	    String[] filenames = salesFile.list();
+	    for(int i = 0; i<filenames.length; i++) {
+	    	System.out.println(filenames[i]);
 	    }
 	    
 	    
-	    
-//	   if(salesFileList != null) {
-//		   for(int i = 0; i<salesFileList.length; i++) {
-//			   if(salesFileList[i].getName().substring(salesFileList[i].length() - 12).matches("^[0-9]{12}") && salesFileList[i].getName().substring(salesFileList[i].length() - 12).matches(".+rcd$")) {
-//				  
-//			   }
-//		   }
-//	   }
+//	    for(int i = 0; i<filenames.length; i++) {
+//	    	if(filenames[i].matches(".+rcd$")) {
+//	    		try {
+//	    			File file = new File(args[0], "filenames[i]");
+//	    			FileReader fr = new FileReader(file);
+//	    			BufferedReader br = new BufferedReader(fr);
+//	    			String p;
+//	    			while((p = br.readLine()) != null){
+//	    				System.out.println(p);
+//	    			}
+//	    		}catch(IOException e) {
+//	    			System.out.println(e);
+//	    		}
+//	    	}
+//	    }
 	}
 }
