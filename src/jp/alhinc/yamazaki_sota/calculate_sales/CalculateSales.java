@@ -100,12 +100,7 @@ public class CalculateSales {
 		
 		try {
 			File file = new File("/Users/yamazaki/training/CalculateSales/shopdetas/branch.out");
-			if(file.createNewFile()) {
-				System.out.println("ファイルが作成されました");
-			}else {
-				System.out.println("ファイルの作成に失敗しました");
-			}
-			FileWriter fw = new FileWriter(file,true);
+			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(bw);
 			pw.println("001,札幌支店," + shopsdeta.get("001"));
