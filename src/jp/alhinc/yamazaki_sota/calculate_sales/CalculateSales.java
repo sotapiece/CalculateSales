@@ -19,37 +19,34 @@ public class CalculateSales {
 			BufferedReader br = new BufferedReader(fr);
 			String s ;
 			while((s = br.readLine()) != null) {
-				System.out.println(s);
+//				System.out.println(s);
 				shops = s.split(",");
-				System.out.println(shops[0]);
-				System.out.println(shops[1]);
+//				System.out.println(shops[0]);
+//				System.out.println(shops[1]);
 				shopsdeta.put(shops[0],0);
 			}
 		}catch(IOException e) {
 			System.out.println(e);
 		}
 		
-		System.out.println(shopsdeta.get("001"));
-		System.out.println(shopsdeta.get("002"));
-		System.out.println(shopsdeta.get("003"));
-		System.out.println(shopsdeta.get("004"));
-		System.out.println(shopsdeta.get("005"));
+//		System.out.println(shopsdeta.get("001"));
+//		System.out.println(shopsdeta.get("002"));
+//		System.out.println(shopsdeta.get("003"));
+//		System.out.println(shopsdeta.get("004"));
+//		System.out.println(shopsdeta.get("005"));
 		
 		
 		File salesFile = new File(args[0]);
 	    String[] filenames = salesFile.list();
-	    for(int i = 0; i<filenames.length; i++) {
-	    	System.out.println(filenames[i]);
-	    }
-	    
-	    System.out.println(filenames[0]);
+//	    for(int i = 0; i<filenames.length; i++) {
+//	    	System.out.println(filenames[i]);
+//	    }    
+
 	    int sapporo = 0;
 	    int sendai = 0;
 	    int tokyo = 0;
 	    int nagoya = 0;
 	    int osaka = 0;
-	    
-	    
 	    
 	    for(int i = 0; i<filenames.length; i++) {
 	    	if(filenames[i].matches(".+rcd$")) {
@@ -59,30 +56,30 @@ public class CalculateSales {
 	    			BufferedReader br = new BufferedReader(fr);
 	    			String key;
 	    			key = br.readLine();
-	    			System.out.println(key);
+//	    			System.out.println(key);
 	    			int value;
 	    			value = Integer.parseInt(br.readLine());
-	    			System.out.println(value);
+//	    			System.out.println(value);
 	    			
 	    			if(key.equals("001")) {
 	    				sapporo += value;
-	    				System.out.println(sapporo);
+//	    				System.out.println(sapporo);
 	    				shopsdeta.put(key,sapporo);
 	    			}else if(key.equals("002")) {
 	    				sendai += value;
-	    				System.out.println(sendai);
+//	    				System.out.println(sendai);
 	    				shopsdeta.put(key,sendai);
 	    			}else if(key.equals("003")) {
 	    				tokyo += value;
-	    				System.out.println(tokyo);
+//	    				System.out.println(tokyo);
 	    				shopsdeta.put(key,tokyo);
 	    			}else if(key.equals("004")) {
 	    				nagoya += value;
-	    				System.out.println(nagoya);
+//	    				System.out.println(nagoya);
 	    				shopsdeta.put(key,nagoya);
 	    			}else if(key.equals("005")) {
 	    				osaka += value;
-	    				System.out.println(osaka);
+//	    				System.out.println(osaka);
 	    				shopsdeta.put(key,osaka);
 	    			}
 	    		}catch(IOException e) {
@@ -91,11 +88,11 @@ public class CalculateSales {
 	    	}
 	    }
 	    
-	    System.out.println(shopsdeta.get("001"));
-		System.out.println(shopsdeta.get("002"));
-		System.out.println(shopsdeta.get("003"));
-		System.out.println(shopsdeta.get("004"));
-		System.out.println(shopsdeta.get("005"));
+//	    System.out.println(shopsdeta.get("001"));
+//		System.out.println(shopsdeta.get("002"));
+//		System.out.println(shopsdeta.get("003"));
+//		System.out.println(shopsdeta.get("004"));
+//		System.out.println(shopsdeta.get("005"));
 	    
 		
 		try {
